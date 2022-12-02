@@ -3,7 +3,6 @@ use std::fs;
 
 fn main() -> io::Result<()> {
     let args = std::env::args().collect::<Vec<String>>();
-    println!("{:?}", args);
     if let Some(file) = args.get(1) {
         let input = fs::read_to_string(&file).unwrap();
         let inventories = input.trim().split("\n\n").map(|x| {
